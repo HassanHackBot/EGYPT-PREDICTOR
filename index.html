@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Predictions – إيداع</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .console-box {
+      font-family: monospace;
+      background-color: #1a1a1a;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 20px #00ff88;
+      color: #00ff88;
+      height: 250px;
+      overflow-y: auto;
+    }
+    .loading-screen {
+      font-family: monospace;
+      background: #000;
+      color: #00ff88;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      flex-direction: column;
+      z-index: 50;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+    .hidden-screen { display: none; }
+  </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+  <div id="loading" class="loading-screen hidden-screen">
+    <p>... جاري التحميل استنى شوية</p>
+  </div>
+  <div id="mainContent" class="">
+    <header class="w-full bg-gray-800 p-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-green-400">AI Predictions 1xBet</h1>
+      <nav class="space-x-4">
+        <a href="#how" class="hover:text-green-400">إزاي شغال</a>
+        <a href="#games" class="hover:text-green-400">الألعاب</a>
+        <a href="#start" class="hover:text-green-400">إبدأ</a>
+      </nav>
+    </header>
+    <section class="min-h-screen flex flex-col items-center justify-center px-4 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold mb-6">
+        اكسب فلوس بجد مع توقعات الذكاء الاصطناعي للألعاب
+      </h2>
+      <div class="mb-4 text-lg font-semibold text-yellow-300">
+        👋 أهلا بيك في الخدمة الرسمية لـ <span class="text-green-400">Hassan El-Sharif</span>!
+      </div>
+      <p class="max-w-xl mb-8 text-gray-300">
+        إنضم لآلاف المستخدمين اللي بيكسبوا معانا في أفيايتر، ماينز و بنالتي. دقة ٩٨٪، توقعات لحظية و سحب فوري!
+      </p>
+      <!-- ID input for connection -->
+      <input id="userId" type="text" placeholder="دخل رقم حسابك في 1xBet" class="bg-gray-700 text-white p-3 rounded-md mb-4">
+      <button id="connectButton" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-xl text-lg transition">اربط الحساب</button>
+      <!-- Success message -->
+      <div id="connectionSuccess" class="hidden text-green-400 font-bold mt-6">
+        <p>ID akaun: <span id="accountIdDisplay">1234567890</span> berjaya disambungkan! ✅</p>
+        <p>Status: Aktif | 100% ketepatan ramalan | Algoritma AI dianalisis</p>
+        <button id="getSignalButton" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-xl text-lg transition mt-4">Dapatkan isyarat</button>
+      </div>
+      <!-- Error message for deposit + PROMOCODE block -->
+      <div id="errorBox" class="hidden bg-red-600 p-6 rounded-xl max-w-md mx-auto mt-6">
+        <h2 class="text-xl font-bold mb-2">⚠️ مفيش إيداع</h2>
+        <p class="mb-4">شكله رصيدك فاضي. لازم تعمل إيداع على الأقل <strong>250 جنيه مصري أو أكتر </strong> علشان تفتح الإشارات وتبدأ تكسب.</p>
+        <a href="https://reffpa.com/L?tag=d_4890533m_97c__[]general[]_d173877_l230510_adaptive_banner&site=4890533&ad=97&r=registration">
+          اعمل إيداع دلوقتي في 1xBet    
+        </a>
+        <!-- Promo code -->
+        <div class="mt-6 bg-red-800 text-white p-4 rounded-lg font-bold text-center">
+          <div class="mb-1 text-lg">كود البونص بتاعك: <span class="bg-black p-1 rounded text-green-400">SSD333</span></div>
+          <div>خلي بالك تسجل <span class="underline">بس</span> بالكود ده علشان تاخد كل المميزات!</div>
+        </div>
+      </div>
+    </section>
+    <!-- Winners -->
+    <section class="bg-gray-800 py-12 px-6 text-center">
+      <h3 class="text-2xl font-bold text-green-400 mb-6">الكسبانين النهاردة (جنيه مصري)</h3>
+      <div class="grid md:grid-cols-2 gap-4 text-left max-w-4xl mx-auto text-sm text-green-300">
+      <p>👤 User: 1218473422 – EGP25,328</p>
+      <p>👤 User: 9912384741 – EGP21,900</p>
+      <p>👤 User: 3099234822 – EGP14,120</p>
+      <p>👤 User: 1187339121 – EGP10,000</p>
+      <p>👤 User: 4412900113 – EGP12,850</p>
+      <p>👤 User: 8283721091 – EGP18,440</p>
+      <p>👤 User: 7751937742 – EGP10,705</p>
+      <p>👤 User: 5554921811 – EGP9,330</p>
+      <p>👤 User: 1983238742 – EGP8,000</p>
+      <p>👤 User: 3377749301 – EGP7,210</p>
+      </div>
+    </section>
+    <!-- Supported games -->
+    <section id="games" class="bg-gray-800 py-12 px-6 text-center">
+      <h3 class="text-2xl font-bold text-green-400 mb-6">الألعاب المدعومة</h3>
+      <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div class="bg-gray-700 p-6 rounded-xl shadow-lg">
+          <h4 class="text-xl font-bold mb-2">🎮 أفيايتر</h4>
+          <p class="text-gray-300">خمن إمتى تسحب قبل الطيارة ما تطير. الذكاء الاصطناعي بيراقب الأنماط في الوقت الحقيقي.</p>
+        </div>
+        <div class="bg-gray-700 p-6 rounded-xl shadow-lg">
+          <h4 class="text-xl font-bold mb-2">💣 ماينز</h4>
+          <p class="text-gray-300">إبعد عن القنابل وخد مكسبك. النظام بيلاقي أقل مخاطرة علشان تزود أرباحك.</p>
+        </div>
+        <div class="bg-gray-700 p-6 rounded-xl shadow-lg">
+          <h4 class="text-xl font-bold mb-2">🥅 بنالتي</h4>
+          <p class="text-gray-300">اعرف فين تشوط أو تصد. اكسب الحارس مع توقعات مبنية على الداتا.</p>
+        </div>
+      </div>
+    </section>
+    <!-- How it works -->
+    <section id="how" class="bg-gray-900 py-12 px-6 text-center">
+      <h3 class="text-2xl font-bold text-green-400 mb-6">إزاي شغال</h3>
+      <div class="max-w-3xl mx-auto space-y-4 text-gray-300">
+        <p>📡 الذكاء الاصطناعي بيحلل الداتا بتاعت الألعاب طول الوقت.</p>
+        <p>💡 بيحدد أنماط تخليك تكسب باستمرار.</p>
+        <p>📲 بتوصلك إشارات موثوق فيها مباشرة على جهازك.</p>
+      </div>
+    </section>
+    <section class="bg-black py-12 px-6 text-center">
+      <h3 class="text-xl font-bold text-green-400 mb-4">[ كونسول – لوج المتابعة ]</h3>
+      <div class="console-box max-w-3xl mx-auto text-left" id="console">
+        <p>[INFO] الخدمة شغالة ✅</p>
+      </div>
+    </section>
+    <footer class="text-center text-gray-500 text-sm py-6">
+      © 2025 AI Predictions. مش تابع لـ 1xBet. استخدم بحذر.
+    </footer>
+  </div>
+  <script>
+    setTimeout(() => {
+      document.getElementById("loading").classList.add("hidden-screen");
+      document.getElementById("mainContent").classList.remove("hidden-screen");
+    }, 3000);
+
+    document.getElementById("connectButton").addEventListener("click", () => {
+      const userId = document.getElementById("userId").value;
+      if (userId) {
+        document.getElementById("accountIdDisplay").innerText = userId;
+        document.getElementById("connectionSuccess").classList.remove("hidden");
+        document.getElementById("errorBox").classList.add("hidden");
+      }
+    });
+
+    document.getElementById("getSignalButton").addEventListener("click", () => {
+      document.getElementById("errorBox").classList.remove("hidden");
+    });
+  </script>
+
+</body>
